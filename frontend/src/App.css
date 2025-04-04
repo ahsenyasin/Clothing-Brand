@@ -1,4 +1,9 @@
 /* Base Styles */
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+>>>>>>> 179e0b9 (commit)
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +11,16 @@
   font-family: 'Arial', sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #2C3E50;
+  line-height: 1.6;
+}
+
+>>>>>>> 179e0b9 (commit)
 /* Loading Animation */
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -90,4 +105,126 @@
   margin-bottom: 2rem;
   color: #2c3e50;
   font-size: 2rem;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* Animation for banner sliders */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Hover effects for product cards */
+.product-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #d44436;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #E74C3C;
+  color: #E74C3C;
+}
+
+.btn-outline:hover {
+  background-color: #E74C3C;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .main-content {
+    min-height: calc(100vh - 200px);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+.main-content {
+  min-height: calc(100vh - 250px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+>>>>>>> 179e0b9 (commit)

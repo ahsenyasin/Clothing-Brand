@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
+<<<<<<< HEAD
 import store from './redux/Store';
 import './App.css';
 
@@ -17,6 +18,15 @@ const Cart = () => {
   );
 };
 
+=======
+import CategoryPage from './pages/CategoryPage';
+import SubcategoryPage from './pages/SubcategoryPage';
+import SearchResults from './pages/SearchResults';
+import Cart from './pages/Cart';
+import store from './redux/Store';
+import './App.css';
+
+>>>>>>> 179e0b9 (commit)
 function App() {
   return (
     <Provider store={store}>
@@ -27,6 +37,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
+<<<<<<< HEAD
+=======
+            <Route path="/category/:category" element={<CategoryPage />} />
+            <Route path="/:category/:subcategory" element={<SubcategoryPage />} />
+            <Route path="/search" element={<SearchResults />} />
+>>>>>>> 179e0b9 (commit)
           </Routes>
         </main>
         <Footer />

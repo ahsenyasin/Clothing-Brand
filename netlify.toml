@@ -1,7 +1,11 @@
 [build]
   base = "frontend"
   publish = "build"
+<<<<<<< HEAD
   command = "npm run build"
+=======
+  command = "bun run build"
+>>>>>>> 179e0b9 (commit)
 
 [build.environment]
   NODE_VERSION = "18"
