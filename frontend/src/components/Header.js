@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiUser, FiShoppingCart, FiHeart, FiMenu, FiChevronDown } from 'react-icons/fi';
@@ -7,6 +8,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiSearch, FiUser, FiShoppingCart, FiHeart, FiMenu, FiChevronDown, FiX } from 'react-icons/fi';
 >>>>>>> 179e0b9 (commit)
+=======
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiSearch, FiUser, FiShoppingCart, FiHeart, FiMenu, FiChevronDown, FiX } from 'react-icons/fi';
+>>>>>>> ec17d2a (Initial commit)
 import { colors, typography, spacing } from '../design-system';
 import { useSelector } from 'react-redux';
 
@@ -14,8 +20,11 @@ const Header = () => {
   const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
 <<<<<<< HEAD
+<<<<<<< HEAD
   const cartItems = useSelector(state => state.cart);
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -38,7 +47,10 @@ const Header = () => {
   }, []);
 
   const isMobile = windowWidth <= 768;
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
 
   const toggleMegaMenu = (category) => {
     if (activeMegaMenu === category) {
@@ -50,7 +62,10 @@ const Header = () => {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
     if (showMobileSearch) setShowMobileSearch(false);
@@ -74,7 +89,10 @@ const Header = () => {
     }
   };
 
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   return (
     <header style={styles.header}>
       <div style={styles.promoBanner}>
@@ -83,7 +101,10 @@ const Header = () => {
 
       <nav style={styles.mainNav}>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
         {isMobile && (
           <button
             style={styles.mobileMenuButton}
@@ -94,6 +115,7 @@ const Header = () => {
           </button>
         )}
 
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
         <div style={styles.logoContainer}>
           <Link to="/" style={styles.logo}>Mohsin Clothes House</Link>
@@ -103,6 +125,12 @@ const Header = () => {
         <div style={styles.navActions}>
           <div style={styles.searchBar}>
 =======
+=======
+        <div style={styles.logoContainer}>
+          <Link to="/" style={styles.logo}>Mohsin Clothes</Link>
+        </div>
+
+>>>>>>> ec17d2a (Initial commit)
         {!isMobile && (
           <div style={styles.navActions}>
             <form onSubmit={handleSearchSubmit} style={styles.searchBar}>
@@ -161,12 +189,16 @@ const Header = () => {
       {showMobileSearch && (
         <div style={styles.mobileSearchContainer}>
           <form onSubmit={handleSearchSubmit} style={styles.mobileSearchBar}>
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
             <FiSearch style={styles.searchIcon} />
             <input
               type="text"
               placeholder="Search products..."
               style={styles.searchInput}
+<<<<<<< HEAD
 <<<<<<< HEAD
             />
           </div>
@@ -329,6 +361,8 @@ const Header = () => {
         </div>
       </div>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               autoFocus
@@ -515,7 +549,10 @@ const Header = () => {
           </div>
         </div>
       )}
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
     </header>
   );
 };
@@ -527,11 +564,16 @@ const styles = {
     position: 'sticky',
     top: 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
     zIndex: 100
 =======
     zIndex: 100,
     width: '100%'
 >>>>>>> 179e0b9 (commit)
+=======
+    zIndex: 100,
+    width: '100%'
+>>>>>>> ec17d2a (Initial commit)
   },
   promoBanner: {
     backgroundColor: colors.secondary,
@@ -540,14 +582,20 @@ const styles = {
     padding: '8px',
     fontSize: '14px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     letterSpacing: '1px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     letterSpacing: '1px',
     '@media (max-width: 768px)': {
       fontSize: '12px',
       padding: '6px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   mainNav: {
     display: 'flex',
@@ -555,11 +603,14 @@ const styles = {
     alignItems: 'center',
     padding: `${spacing.medium} 5%`,
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: '0 auto'
   },
   logoContainer: {
     minWidth: '150px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     margin: '0 auto',
     '@media (max-width: 768px)': {
       padding: `${spacing.small} 5%`
@@ -571,7 +622,10 @@ const styles = {
       textAlign: 'center',
       flex: 1
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   logo: {
     fontFamily: typography.heading,
@@ -579,13 +633,19 @@ const styles = {
     color: colors.primary,
     textDecoration: 'none',
 <<<<<<< HEAD
+<<<<<<< HEAD
     fontWeight: 'bold'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     fontWeight: 'bold',
     '@media (max-width: 768px)': {
       fontSize: '22px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   navActions: {
     display: 'flex',
@@ -595,13 +655,19 @@ const styles = {
   searchBar: {
     position: 'relative',
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: '300px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     width: '300px',
     '@media (max-width: 992px)': {
       width: '200px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   searchIcon: {
     position: 'absolute',
@@ -609,11 +675,16 @@ const styles = {
     top: '50%',
     transform: 'translateY(-50%)',
 <<<<<<< HEAD
+<<<<<<< HEAD
     color: '#999'
 =======
     color: '#999',
     zIndex: 1
 >>>>>>> 179e0b9 (commit)
+=======
+    color: '#999',
+    zIndex: 1
+>>>>>>> ec17d2a (Initial commit)
   },
   searchInput: {
     width: '100%',
@@ -666,6 +737,7 @@ const styles = {
     justifyContent: 'center',
     maxWidth: '1200px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: '0 auto'
   },
   categoryItem: {
@@ -675,6 +747,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     margin: '0 auto',
     flexWrap: 'wrap'
   },
@@ -690,7 +764,10 @@ const styles = {
       padding: '15px 10px',
       fontSize: '13px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   categoryText: {
     fontSize: '14px',
@@ -712,13 +789,19 @@ const styles = {
     boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
     zIndex: 100,
 <<<<<<< HEAD
+<<<<<<< HEAD
     justifyContent: 'space-between'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     justifyContent: 'space-between',
     '@media (max-width: 992px)': {
       width: '600px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   megaMenuColumn: {
     flex: 1,
@@ -739,11 +822,14 @@ const styles = {
     padding: '8px 0',
     fontSize: '14px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: 'color 0.2s',
     ':hover': {
       color: colors.secondary
     }
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     transition: 'color 0.2s'
   },
   // Mobile styles
@@ -817,7 +903,10 @@ const styles = {
     height: '10px',
     backgroundColor: '#f5f5f5',
     margin: '10px 0'
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   }
 };
 

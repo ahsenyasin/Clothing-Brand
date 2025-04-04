@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMapPin, FiPhone, FiMail, FiFacebook, FiInstagram, FiTwitter, FiYoutube } from 'react-icons/fi';
@@ -6,6 +7,8 @@ import { colors, spacing, typography } from '../design-system';
 
 const Footer = () => {
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMapPin, FiPhone, FiMail, FiFacebook, FiInstagram, FiTwitter, FiYoutube, FiChevronDown, FiChevronUp } from 'react-icons/fi';
@@ -25,7 +28,10 @@ const Footer = () => {
   // Check if we're on mobile
   const isMobile = window.innerWidth <= 768;
 
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   return (
     <footer style={styles.footer}>
       <div style={styles.footerTop}>
@@ -33,6 +39,7 @@ const Footer = () => {
           <div style={styles.footerGrid}>
             {/* Shop Column */}
             <div style={styles.footerColumn}>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <h3 style={styles.columnTitle}>Shop</h3>
               <ul style={styles.linkList}>
@@ -54,6 +61,8 @@ const Footer = () => {
                 <li style={styles.linkItem}>
                   <Link to="/sale" style={styles.footerLink}>Sale</Link>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               <div
                 style={styles.columnHeader}
                 onClick={() => isMobile && toggleSection('shop')}
@@ -88,7 +97,10 @@ const Footer = () => {
                 </li>
                 <li style={styles.linkItem}>
                   <Link to="/category/sale" style={styles.footerLink}>Sale</Link>
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
                 </li>
               </ul>
             </div>
@@ -96,9 +108,12 @@ const Footer = () => {
             {/* Information Column */}
             <div style={styles.footerColumn}>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <h3 style={styles.columnTitle}>Information</h3>
               <ul style={styles.linkList}>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               <div
                 style={styles.columnHeader}
                 onClick={() => isMobile && toggleSection('info')}
@@ -116,7 +131,10 @@ const Footer = () => {
                   })
                 }}
               >
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
                 <li style={styles.linkItem}>
                   <Link to="/about" style={styles.footerLink}>About Us</Link>
                 </li>
@@ -141,9 +159,12 @@ const Footer = () => {
             {/* Customer Service Column */}
             <div style={styles.footerColumn}>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <h3 style={styles.columnTitle}>Customer Service</h3>
               <ul style={styles.linkList}>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               <div
                 style={styles.columnHeader}
                 onClick={() => isMobile && toggleSection('service')}
@@ -161,7 +182,10 @@ const Footer = () => {
                   })
                 }}
               >
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
                 <li style={styles.linkItem}>
                   <Link to="/orders-tracking" style={styles.footerLink}>Track Order</Link>
                 </li>
@@ -180,6 +204,7 @@ const Footer = () => {
             {/* Contact Column */}
             <div style={styles.footerColumn}>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <h3 style={styles.columnTitle}>Contact Us</h3>
               <ul style={styles.contactList}>
                 <li style={styles.contactItem}>
@@ -194,6 +219,8 @@ const Footer = () => {
                   <FiMail style={styles.contactIcon} />
                   <span>info@gulahmedshop.com</span>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               <div
                 style={styles.columnHeader}
                 onClick={() => isMobile && toggleSection('contact')}
@@ -213,22 +240,34 @@ const Footer = () => {
               >
                 <li style={styles.contactItem}>
                   <FiMapPin style={styles.contactIcon} />
+<<<<<<< HEAD
                   <span>123 Fashion Street, Textile City, Karachi, Pakistan</span>
                 </li>
                 <li style={styles.contactItem}>
                   <FiPhone style={styles.contactIcon} />
                   <span>+92 21 111-222-333</span>
+=======
+                  <span> Street Rani Bazar , Jampur, Pakistan</span>
+                </li>
+                <li style={styles.contactItem}>
+                  <FiPhone style={styles.contactIcon} />
+                  <span>+92 333 635 3851</span>
+>>>>>>> ec17d2a (Initial commit)
                 </li>
                 <li style={styles.contactItem}>
                   <FiMail style={styles.contactIcon} />
                   <span>info@mohsinclothes.com</span>
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
                 </li>
               </ul>
             </div>
 
             {/* Newsletter Signup */}
             <div style={styles.footerColumn}>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <h3 style={styles.columnTitle}>Newsletter</h3>
               <p style={styles.newsletterText}>
@@ -257,6 +296,8 @@ const Footer = () => {
                   <FiYoutube size={20} />
                 </a>
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
               <div
                 style={styles.columnHeader}
                 onClick={() => isMobile && toggleSection('newsletter')}
@@ -299,7 +340,10 @@ const Footer = () => {
                     <FiYoutube size={20} />
                   </a>
                 </div>
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
               </div>
             </div>
           </div>
@@ -311,10 +355,14 @@ const Footer = () => {
           <div style={styles.footerBottomContent}>
             <p style={styles.copyright}>
 <<<<<<< HEAD
+<<<<<<< HEAD
               © {new Date().getFullYear()} GulAhmed. All Rights Reserved.
 =======
               © {new Date().getFullYear()} Mohsin Clothes House. All Rights Reserved.
 >>>>>>> 179e0b9 (commit)
+=======
+              © {new Date().getFullYear()} Mohsin Clothes House. All Rights Reserved.
+>>>>>>> ec17d2a (Initial commit)
             </p>
             <div style={styles.paymentMethods}>
               <span style={styles.paymentLabel}>Payment Methods:</span>
@@ -339,13 +387,19 @@ const styles = {
   },
   footerTop: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding: '50px 0'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     padding: '50px 0',
     '@media (max-width: 768px)': {
       padding: '30px 0'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   container: {
     maxWidth: '1200px',
@@ -356,11 +410,14 @@ const styles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: '30px'
   },
   footerColumn: {
     marginBottom: '20px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     gap: '30px',
     '@media (max-width: 768px)': {
       gridTemplateColumns: '1fr',
@@ -383,33 +440,48 @@ const styles = {
     '@media (max-width: 768px)': {
       padding: '15px 0'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   columnTitle: {
     fontSize: '18px',
     fontWeight: 'bold',
     marginBottom: '20px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     color: colors.primary
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     color: colors.primary,
     '@media (max-width: 768px)': {
       marginBottom: '0',
       fontSize: '16px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   linkList: {
     listStyle: 'none',
     padding: 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 0
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     margin: 0,
     '@media (max-width: 768px)': {
       padding: '0 0 15px 15px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   linkItem: {
     marginBottom: '12px'
@@ -418,6 +490,7 @@ const styles = {
     color: colors.dark,
     textDecoration: 'none',
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: 'color 0.2s ease',
     ':hover': {
       color: colors.secondary
@@ -425,18 +498,27 @@ const styles = {
 =======
     transition: 'color 0.2s ease'
 >>>>>>> 179e0b9 (commit)
+=======
+    transition: 'color 0.2s ease'
+>>>>>>> ec17d2a (Initial commit)
   },
   contactList: {
     listStyle: 'none',
     padding: 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 0
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     margin: 0,
     '@media (max-width: 768px)': {
       padding: '0 0 15px 15px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   contactItem: {
     display: 'flex',
@@ -450,12 +532,15 @@ const styles = {
   newsletterText: {
     marginBottom: '15px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     lineHeight: '1.5'
   },
   newsletterForm: {
     display: 'flex',
     marginBottom: '20px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     lineHeight: '1.5',
     '@media (max-width: 768px)': {
       padding: '0 0 0 15px'
@@ -468,7 +553,10 @@ const styles = {
       padding: '0 15px',
       flexDirection: 'column'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   newsletterInput: {
     flex: '1',
@@ -477,15 +565,21 @@ const styles = {
     borderRight: 'none',
     borderTopLeftRadius: '4px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     borderBottomLeftRadius: '4px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     borderBottomLeftRadius: '4px',
     '@media (max-width: 768px)': {
       borderRight: '1px solid #ddd',
       borderRadius: '4px',
       marginBottom: '10px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   newsletterButton: {
     padding: '10px 15px',
@@ -495,12 +589,15 @@ const styles = {
     borderTopRightRadius: '4px',
     borderBottomRightRadius: '4px',
 <<<<<<< HEAD
+<<<<<<< HEAD
     cursor: 'pointer'
   },
   socialLinks: {
     display: 'flex',
     gap: '15px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     cursor: 'pointer',
     '@media (max-width: 768px)': {
       borderRadius: '4px',
@@ -513,7 +610,10 @@ const styles = {
     '@media (max-width: 768px)': {
       padding: '0 15px 15px'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   socialLink: {
     display: 'flex',
@@ -525,6 +625,7 @@ const styles = {
     backgroundColor: 'white',
     color: colors.dark,
 <<<<<<< HEAD
+<<<<<<< HEAD
     transition: 'background-color 0.2s ease, color 0.2s ease',
     ':hover': {
       backgroundColor: colors.secondary,
@@ -533,6 +634,9 @@ const styles = {
 =======
     transition: 'background-color 0.2s ease, color 0.2s ease'
 >>>>>>> 179e0b9 (commit)
+=======
+    transition: 'background-color 0.2s ease, color 0.2s ease'
+>>>>>>> ec17d2a (Initial commit)
   },
   footerBottom: {
     borderTop: '1px solid #ddd',
@@ -545,14 +649,20 @@ const styles = {
     alignItems: 'center',
     flexWrap: 'wrap',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: '20px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     gap: '20px',
     '@media (max-width: 768px)': {
       flexDirection: 'column',
       textAlign: 'center'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   copyright: {
     margin: 0
@@ -561,13 +671,19 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
 <<<<<<< HEAD
+<<<<<<< HEAD
     gap: '10px'
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
     gap: '10px',
     '@media (max-width: 768px)': {
       flexDirection: 'column'
     }
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
   },
   paymentLabel: {
     fontWeight: 'bold'

@@ -1,18 +1,28 @@
 /* Base Styles */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 >>>>>>> 179e0b9 (commit)
+=======
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+>>>>>>> ec17d2a (Initial commit)
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   font-family: 'Arial', sans-serif;
 }
 
 <<<<<<< HEAD
 =======
+=======
+}
+
+>>>>>>> ec17d2a (Initial commit)
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
@@ -20,7 +30,10 @@ body {
   line-height: 1.6;
 }
 
+<<<<<<< HEAD
 >>>>>>> 179e0b9 (commit)
+=======
+>>>>>>> ec17d2a (Initial commit)
 /* Loading Animation */
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -106,8 +119,11 @@ body {
   color: #2c3e50;
   font-size: 2rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> ec17d2a (Initial commit)
 }
 
 /* Animation for banner sliders */
@@ -144,6 +160,10 @@ body {
   border: none;
   font-weight: 600;
   transition: background-color 0.3s;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ec17d2a (Initial commit)
 }
 
 .btn:hover {
@@ -161,6 +181,128 @@ body {
   color: white;
 }
 
+<<<<<<< HEAD
+=======
+/* Responsive layout */
+.main-content {
+  min-height: calc(100vh - 250px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Filter and Sort Controls */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #e74c3c;
+  outline: none;
+}
+
+.form-submit {
+  padding: 12px 25px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+  background-color: #d44436;
+}
+
+>>>>>>> ec17d2a (Initial commit)
 /* Responsive styles */
 @media (max-width: 1200px) {
   .container {
@@ -175,6 +317,15 @@ body {
   h2 {
     font-size: 1.8rem;
   }
+<<<<<<< HEAD
+=======
+  h3 {
+    font-size: 1.5rem;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+>>>>>>> ec17d2a (Initial commit)
 }
 
 @media (max-width: 768px) {
@@ -187,9 +338,28 @@ body {
   h2 {
     font-size: 1.5rem;
   }
+<<<<<<< HEAD
   .main-content {
     min-height: calc(100vh - 200px);
   }
+=======
+  h3 {
+    font-size: 1.3rem;
+  }
+  .main-content {
+    min-height: calc(100vh - 200px);
+  }
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-group {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+>>>>>>> ec17d2a (Initial commit)
 }
 
 @media (max-width: 576px) {
@@ -202,6 +372,7 @@ body {
   h2 {
     font-size: 1.3rem;
   }
+<<<<<<< HEAD
 }
 
 .main-content {
@@ -228,3 +399,16 @@ a {
   margin: 0 auto;
 }
 >>>>>>> 179e0b9 (commit)
+=======
+  h3 {
+    font-size: 1.1rem;
+  }
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  .product-image {
+    height: 200px;
+  }
+}
+>>>>>>> ec17d2a (Initial commit)

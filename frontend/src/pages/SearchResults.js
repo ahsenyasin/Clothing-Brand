@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { useSearchParams, Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Loading from '../components/Loading';
@@ -306,12 +307,355 @@ const SearchResults = () => {
           </div>
         </div>
       )}
+=======
+import { useLocation } from 'react-router-dom';
+import { FiFilter, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import ProductCard from '../components/ProductCard';
+import { colors } from '../design-system';
+
+const SearchResults = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const searchQuery = queryParams.get('q') || '';
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [sortOption, setSortOption] = useState('relevance');
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [priceRange, setPriceRange] = useState([0, 10000]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedColors, setSelectedColors] = useState([]);
+
+  // Mock product data
+  useEffect(() => {
+    // Simulate API fetch based on search query
+    setTimeout(() => {
+      const mockProducts = [
+        {
+          id: 1,
+          name: 'Embroidered Lawn Suit',
+          price: 4500,
+          oldPrice: 5900,
+          category: 'women',
+          subcategory: 'embroidered',
+          colors: ['blue', 'green'],
+          image: '/images/products/product1.jpeg',
+          discount: 24
+        },
+        {
+          id: 2,
+          name: 'Printed Cotton Shirt',
+          price: 2800,
+          category: 'men',
+          subcategory: 'shirts',
+          colors: ['white', 'black'],
+          image: '/images/products/product2.png'
+        },
+        {
+          id: 3,
+          name: 'Digital Print Kurti',
+          price: 3200,
+          oldPrice: 3800,
+          category: 'women',
+          subcategory: 'printed',
+          colors: ['red', 'orange'],
+          image: '/images/products/product3.jpeg',
+          discount: 16
+        },
+        {
+          id: 4,
+          name: 'Formal Chiffon Dress',
+          price: 6500,
+          category: 'women',
+          subcategory: 'formal',
+          colors: ['black', 'navy'],
+          image: '/images/products/product4.jpeg'
+        },
+        {
+          id: 5,
+          name: 'Men\'s Formal Suit',
+          price: 12500,
+          oldPrice: 15000,
+          category: 'men',
+          subcategory: 'suits',
+          colors: ['black', 'gray'],
+          image: '/images/products/product5.jpeg',
+          discount: 17
+        },
+        {
+          id: 6,
+          name: 'Kids Cotton Dress',
+          price: 2200,
+          category: 'kids',
+          subcategory: 'girls-dresses',
+          colors: ['pink', 'yellow'],
+          image: '/images/products/product6.jpeg'
+        }
+      ];
+
+      // Filter products based on search query
+      const filteredProducts = searchQuery
+        ? mockProducts.filter(product =>
+            product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.subcategory.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        : mockProducts;
+
+      setProducts(filteredProducts);
+      setLoading(false);
+    }, 1000);
+  }, [searchQuery]);
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+    // Sort products based on the selected option
+    let sortedProducts = [...products];
+    switch (e.target.value) {
+      case 'price-low':
+        sortedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-high':
+        sortedProducts.sort((a, b) => b.price - a.price);
+        break;
+      case 'newest':
+        // Would typically sort by date, but using IDs for this example
+        sortedProducts.sort((a, b) => b.id - a.id);
+        break;
+      case 'discount':
+        sortedProducts.sort((a, b) => (b.discount || 0) - (a.discount || 0));
+        break;
+      default:
+        // 'relevance' - no specific sorting in mock data
+        break;
+    }
+    setProducts(sortedProducts);
+  };
+
+  const toggleCategory = (category) => {
+    if (selectedCategories.includes(category)) {
+      setSelectedCategories(selectedCategories.filter(c => c !== category));
+    } else {
+      setSelectedCategories([...selectedCategories, category]);
+    }
+  };
+
+  const toggleColor = (color) => {
+    if (selectedColors.includes(color)) {
+      setSelectedColors(selectedColors.filter(c => c !== color));
+    } else {
+      setSelectedColors([...selectedColors, color]);
+    }
+  };
+
+  const toggleFilter = () => {
+    setFilterOpen(!filterOpen);
+  };
+
+  const handlePriceChange = (e, index) => {
+    const newRange = [...priceRange];
+    newRange[index] = parseInt(e.target.value, 10);
+    setPriceRange(newRange);
+  };
+
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>
+        {searchQuery
+          ? `Search Results for "${searchQuery}"`
+          : "All Products"
+        }
+      </h1>
+
+      <p style={styles.resultsCount}>
+        {products.length} products found
+      </p>
+
+      <div style={styles.mobileFilterToggle}>
+        <button style={styles.filterButton} onClick={toggleFilter}>
+          <FiFilter size={16} />
+          <span>Filter & Sort</span>
+          {filterOpen ? <FiChevronUp size={16} /> : <FiChevronDown size={16} />}
+        </button>
+      </div>
+
+      <div style={{
+        ...styles.filtersContainer,
+        display: filterOpen ? 'block' : 'none'
+      }} className="mobile-filters">
+        <div style={styles.filterSection}>
+          <h3 style={styles.filterHeading}>Sort By</h3>
+          <select
+            style={styles.sortSelect}
+            value={sortOption}
+            onChange={handleSortChange}
+          >
+            <option value="relevance">Relevance</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+            <option value="discount">Discount</option>
+          </select>
+        </div>
+
+        <div style={styles.filterSection}>
+          <h3 style={styles.filterHeading}>Price Range</h3>
+          <div style={styles.priceInputs}>
+            <input
+              type="number"
+              value={priceRange[0]}
+              onChange={(e) => handlePriceChange(e, 0)}
+              style={styles.priceInput}
+              min="0"
+              max={priceRange[1]}
+            />
+            <span style={styles.priceSeparator}>to</span>
+            <input
+              type="number"
+              value={priceRange[1]}
+              onChange={(e) => handlePriceChange(e, 1)}
+              style={styles.priceInput}
+              min={priceRange[0]}
+            />
+          </div>
+        </div>
+
+        <div style={styles.filterSection}>
+          <h3 style={styles.filterHeading}>Categories</h3>
+          <div style={styles.checkboxList}>
+            {['women', 'men', 'kids', 'home'].map(category => (
+              <label key={category} style={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  checked={selectedCategories.includes(category)}
+                  onChange={() => toggleCategory(category)}
+                  style={styles.checkbox}
+                />
+                <span style={styles.checkboxText}>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div style={styles.filterSection}>
+          <h3 style={styles.filterHeading}>Colors</h3>
+          <div style={styles.colorOptions}>
+            {['black', 'white', 'red', 'blue', 'green', 'yellow', 'pink', 'navy', 'gray'].map(color => (
+              <button
+                key={color}
+                style={{
+                  ...styles.colorButton,
+                  backgroundColor: color,
+                  border: selectedColors.includes(color) ? '2px solid black' : '1px solid #ddd'
+                }}
+                onClick={() => toggleColor(color)}
+                aria-label={color}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div style={styles.contentLayout}>
+        <div style={styles.filtersDesktop}>
+          <div style={styles.filterSection}>
+            <h3 style={styles.filterHeading}>Sort By</h3>
+            <select
+              style={styles.sortSelect}
+              value={sortOption}
+              onChange={handleSortChange}
+            >
+              <option value="relevance">Relevance</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest First</option>
+              <option value="discount">Discount</option>
+            </select>
+          </div>
+
+          <div style={styles.filterSection}>
+            <h3 style={styles.filterHeading}>Price Range</h3>
+            <div style={styles.priceInputs}>
+              <input
+                type="number"
+                value={priceRange[0]}
+                onChange={(e) => handlePriceChange(e, 0)}
+                style={styles.priceInput}
+                min="0"
+                max={priceRange[1]}
+              />
+              <span style={styles.priceSeparator}>to</span>
+              <input
+                type="number"
+                value={priceRange[1]}
+                onChange={(e) => handlePriceChange(e, 1)}
+                style={styles.priceInput}
+                min={priceRange[0]}
+              />
+            </div>
+          </div>
+
+          <div style={styles.filterSection}>
+            <h3 style={styles.filterHeading}>Categories</h3>
+            <div style={styles.checkboxList}>
+              {['women', 'men', 'kids', 'home'].map(category => (
+                <label key={category} style={styles.checkboxLabel}>
+                  <input
+                    type="checkbox"
+                    checked={selectedCategories.includes(category)}
+                    onChange={() => toggleCategory(category)}
+                    style={styles.checkbox}
+                  />
+                  <span style={styles.checkboxText}>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div style={styles.filterSection}>
+            <h3 style={styles.filterHeading}>Colors</h3>
+            <div style={styles.colorOptions}>
+              {['black', 'white', 'red', 'blue', 'green', 'yellow', 'pink', 'navy', 'gray'].map(color => (
+                <button
+                  key={color}
+                  style={{
+                    ...styles.colorButton,
+                    backgroundColor: color,
+                    border: selectedColors.includes(color) ? '2px solid black' : '1px solid #ddd'
+                  }}
+                  onClick={() => toggleColor(color)}
+                  aria-label={color}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div style={styles.productsGrid}>
+          {loading ? (
+            <div style={styles.loading}>Loading products...</div>
+          ) : products.length > 0 ? (
+            products.map(product => (
+              <div key={product.id} style={styles.productCard}>
+                <ProductCard product={product} />
+              </div>
+            ))
+          ) : (
+            <div style={styles.noResults}>
+              <h2>No products found</h2>
+              <p>Try adjusting your search criteria or browse our categories.</p>
+            </div>
+          )}
+        </div>
+      </div>
+>>>>>>> ec17d2a (Initial commit)
     </div>
   );
 };
 
 const styles = {
   container: {
+<<<<<<< HEAD
     padding: '20px 5%',
     maxWidth: '1400px',
     margin: '0 auto'
@@ -347,10 +691,82 @@ const styles = {
     color: colors.primary
   },
   select: {
+=======
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '30px 20px',
+  },
+  title: {
+    fontSize: '28px',
+    fontWeight: 'bold',
+    marginBottom: '5px',
+    color: colors.primary,
+  },
+  resultsCount: {
+    fontSize: '14px',
+    color: '#666',
+    marginBottom: '20px',
+  },
+  mobileFilterToggle: {
+    display: 'none',
+    marginBottom: '20px',
+    '@media (max-width: 768px)': {
+      display: 'block',
+    }
+  },
+  filterButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    padding: '12px 15px',
+    backgroundColor: 'white',
+    border: '1px solid #ddd',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontSize: '15px',
+  },
+  filtersContainer: {
+    backgroundColor: 'white',
+    padding: '15px',
+    borderRadius: '4px',
+    marginBottom: '20px',
+    border: '1px solid #ddd',
+  },
+  contentLayout: {
+    display: 'flex',
+    gap: '30px',
+  },
+  filtersDesktop: {
+    width: '250px',
+    backgroundColor: 'white',
+    padding: '20px',
+    borderRadius: '8px',
+    alignSelf: 'flex-start',
+    border: '1px solid #eee',
+    '@media (max-width: 768px)': {
+      display: 'none',
+    }
+  },
+  filterSection: {
+    marginBottom: '25px',
+    '&:last-child': {
+      marginBottom: 0,
+    }
+  },
+  filterHeading: {
+    fontSize: '16px',
+    marginBottom: '15px',
+    paddingBottom: '8px',
+    borderBottom: '1px solid #eee',
+  },
+  sortSelect: {
+>>>>>>> ec17d2a (Initial commit)
     width: '100%',
     padding: '10px',
     border: '1px solid #ddd',
     borderRadius: '4px',
+<<<<<<< HEAD
     backgroundColor: 'white'
   },
   productsGrid: {
@@ -390,6 +806,80 @@ const styles = {
       width: '100%',
       marginBottom: '20px'
     }
+=======
+    fontSize: '14px',
+  },
+  priceInputs: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  },
+  priceInput: {
+    width: '80px',
+    padding: '8px',
+    border: '1px solid #ddd',
+    borderRadius: '4px',
+    fontSize: '14px',
+  },
+  priceSeparator: {
+    color: '#666',
+  },
+  checkboxList: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+  },
+  checkboxLabel: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+  },
+  checkbox: {
+    marginRight: '8px',
+  },
+  checkboxText: {
+    fontSize: '14px',
+  },
+  colorOptions: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '10px',
+  },
+  colorButton: {
+    width: '30px',
+    height: '30px',
+    borderRadius: '50%',
+    cursor: 'pointer',
+    transition: 'transform 0.2s',
+    ':hover': {
+      transform: 'scale(1.1)',
+    }
+  },
+  productsGrid: {
+    flex: 1,
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+    gap: '25px',
+    '@media (max-width: 576px)': {
+      gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+      gap: '15px',
+    }
+  },
+  productCard: {
+    width: '100%',
+  },
+  loading: {
+    padding: '40px',
+    textAlign: 'center',
+    gridColumn: '1 / -1',
+    fontSize: '16px',
+    color: '#666',
+  },
+  noResults: {
+    padding: '40px',
+    textAlign: 'center',
+    gridColumn: '1 / -1',
+>>>>>>> ec17d2a (Initial commit)
   }
 };
 
